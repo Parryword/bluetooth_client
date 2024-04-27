@@ -22,7 +22,7 @@ class LabeledEntry(Entry):
 
 class App:
     connection = Bluetooth()
-    temperature, humidity, wind_speed, sensor_temperature = 100
+    temperature, humidity, wind_speed, sensor_temperature = 100, 101, 102, 103
 
     def __init__(self):
         green = "#a9cf7f"
@@ -66,13 +66,13 @@ class App:
         sensor_header = Label(weather_frame, text="Sensor temp.")
         sensor_header.grid(row=4, column=0, padx=10, pady=10)
 
-        temp_val_header = Label(weather_frame, text="100")
+        temp_val_header = Label(weather_frame, text=str(self.temperature))
         temp_val_header.grid(row=1, column=1, padx=10, pady=10)
-        humidity_val_header = Label(weather_frame, text="100")
+        humidity_val_header = Label(weather_frame, text=str(self.humidity))
         humidity_val_header.grid(row=2, column=1, padx=10, pady=10)
-        wind_val_header = Label(weather_frame, text="100")
+        wind_val_header = Label(weather_frame, text=str(self.wind_speed))
         wind_val_header.grid(row=3, column=1, padx=10, pady=10)
-        sensor_val_header = Label(weather_frame, text="100")
+        sensor_val_header = Label(weather_frame, text=str(self.sensor_temperature))
         sensor_val_header.grid(row=4, column=1, padx=10, pady=10)
 
         root.mainloop()

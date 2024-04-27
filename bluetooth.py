@@ -12,7 +12,10 @@ def scan():
 class Bluetooth:
     def __init__(self, port='COM5', baud_rate=115200, timeout=1):
         # Communication through port
-        self.bluetooth = serial.Serial(port=port, baudrate=baud_rate, write_timeout=timeout)
+        try:
+            self.bluetooth = serial.Serial(port=port, baudrate=baud_rate, write_timeout=timeout)
+        except:
+            print("Failed to connect to ESP32.")
 
     def change_credentials(self):
         return
