@@ -14,8 +14,9 @@ class Bluetooth:
         # Communication through port
         try:
             self.bluetooth = serial.Serial(port=port, baudrate=baud_rate, write_timeout=timeout)
-        except:
+        except Exception as e:
             print("Failed to connect to ESP32.")
+            print(e)
 
     def change_credentials(self):
         return
