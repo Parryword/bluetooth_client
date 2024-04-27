@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import font
+from bluetooth import *
 
 
 class LabeledEntry(Entry):
@@ -20,12 +21,16 @@ class LabeledEntry(Entry):
 
 
 class App:
+    connection = Bluetooth()
+    temperature, humidity, wind_speed, sensor_temperature = 100
+
     def __init__(self):
         green = "#a9cf7f"
 
         root = Tk()
         root.title("Weather Status")
         root.config(bg=green)
+        root.resizable(False, False)
 
         # df = font.nametofont("TkDefaultFont")
         # df.config(size=20)
@@ -73,10 +78,10 @@ class App:
         root.mainloop()
 
     def submit(self) -> None:
-        return
+        self.connection.change_credentials()
 
     def update(self) -> None:
-        return
+        self.connection.fetch_data()
 
 
 if __name__ == '__main__':
