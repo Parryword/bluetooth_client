@@ -36,4 +36,29 @@ submit_button.grid(row=2, column=0, padx=10, pady=10)
 
 right_frame = Frame(root, width=400, height=400)
 right_frame.grid(row=0, column=1, padx=10, pady=10)
+
+main_header = Label(right_frame, text="Current Weather")
+main_header.grid(row=0, column=0, padx=10, pady=10)
+
+weather_frame = Frame(right_frame)
+weather_frame.grid(row=1, column=0, padx=10, pady=10)
+
+temp_header = Label(weather_frame, text="Temperature")
+temp_header.grid(row=1, column=0, padx=10, pady=10)
+humidity_header = Label(weather_frame, text="Humidity")
+humidity_header.grid(row=2, column=0, padx=10, pady=10)
+wind_header = Label(weather_frame, text="Wind speed")
+wind_header.grid(row=3, column=0, padx=10, pady=10)
+sensor_header = Label(weather_frame, text="Sensor temp.")
+sensor_header.grid(row=4, column=0, padx=10, pady=10)
+
+temp_val_header = Label(weather_frame, text="100")
+temp_val_header.grid(row=1, column=1, padx=10, pady=10)
+humidity_val_header = Label(weather_frame, text="100")
+humidity_val_header.grid(row=2, column=1, padx=10, pady=10)
+wind_val_header = Label(weather_frame, text="100")
+wind_val_header.grid(row=3, column=1, padx=10, pady=10)
+sensor_val_header = Label(weather_frame, text="100")
+sensor_val_header .grid(row=4, column=1, padx=10, pady=10)
+
 root.mainloop()
