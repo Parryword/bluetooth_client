@@ -31,7 +31,7 @@ class Bluetooth:
         print(data.decode("ascii"))
         self.bluetooth.close()
 
-    def fetch_data(self):
+    def fetch_data(self, city: str):
         if not self.bluetooth.isOpen():
             self.bluetooth.open()
         self.bluetooth.flushInput()

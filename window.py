@@ -92,7 +92,8 @@ class App:
         self.connection.change_credentials(ssid, password)
 
     def update(self):
-        self.connection.fetch_data()
+        city = self.city_chosen.get()
+        self.connection.fetch_data(city)
 
 
 if __name__ == '__main__':
