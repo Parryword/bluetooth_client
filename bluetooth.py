@@ -26,7 +26,7 @@ class Bluetooth:
         if not self.bluetooth.isOpen():
             self.bluetooth.open()
         self.bluetooth.flushInput()
-        self.bluetooth.write(b'CRED -m ' + ssid.encode("ascii") + b'\r\n')
+        self.bluetooth.write(b'CRED -s ' + ssid.encode("ascii") + b' -p ' + password.encode("ascii") + b'\r\n')
         data = self.bluetooth.readline()
         print(data.decode("ascii"))
         self.bluetooth.close()
